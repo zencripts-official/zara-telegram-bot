@@ -10,7 +10,7 @@
 
 ### 1. Clone the project
 ```bash
-git clone https://github.com/yourusername/zara-telegram-bot.git
+git clone https://github.com/zencripts-official/zara-telegram-bot.git
 cd zara-telegram-bot
 ```
 
