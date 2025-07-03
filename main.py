@@ -13,12 +13,12 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 logging.basicConfig(level=logging.INFO)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("👋 Hi! I'm Zara AI powered by Gemini 🤖\nAsk me anything!")
+    await update.message.reply_text("👋 Hi! I'm Zara AI powered by zencripts 🤖\nAsk me anything!")
 
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_msg = update.message.text
@@ -35,7 +35,7 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
         store_message(user_id, f"Zara: {bot_reply}")
         await update.message.reply_text(bot_reply)
     except Exception as e:
-        await update.message.reply_text(f"⚠️ Gemini Error: {e}")
+        await update.message.reply_text(f"⚠️ zencripts Error: {e}")
 
 async def forget(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
